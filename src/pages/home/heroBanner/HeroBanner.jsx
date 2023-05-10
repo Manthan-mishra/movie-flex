@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./style.scss";
 import useFetch from "../../../hooks/useFetch";
-import img from "../../../components/lazyLoadImage/img";
+import Img from "../../../components/lazyLoadImage/Img";
 import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 const HeroBanner = () => {
@@ -30,7 +30,7 @@ const HeroBanner = () => {
     <div className="heroBanner">
       {!loading && (
         <div className="backdrop-img">
-          <img src={background} />
+          <Img src={background} />
         </div>
       )}
 
