@@ -16,23 +16,26 @@ const Header = () => {
   const [query, setQuery] = useState("");
   const [showSearch, setShowSearch] = useState("");
   const navigate = useNavigate();
-  // const location = useLocation();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const controlNavbar = () => {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     if (window.scrollY > 200) {
       if (window.scrollY > lastScrollY && !mobileMenu) {
         setShow("hide");
       } else {
         setShow("show");
       }
+    } else {
+      setShow("top");
     }
-     else{
-
-     } 
-      setLastScrollY(window.scrollY);
-    }
+    setLastScrollY(window.scrollY);
   };
+
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => {
@@ -138,5 +141,4 @@ const Header = () => {
     </header>
   );
 };
-
 export default Header;
